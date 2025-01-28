@@ -4,9 +4,13 @@ public class Wall {
     private double height;
     private double width;
 
-    public Wall(){
+    public Wall(){// Java allows you to create multiple constructors for a single class as long as the parameter headers are different
         this.height = 0;
         this.width = 0;
+    }
+    public Wall(double height, double width){
+        this.height = height;
+        this.width = width;
     }
     public double getHeight(){//getter
         return this.height;
