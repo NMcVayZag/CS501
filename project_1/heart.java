@@ -1,5 +1,4 @@
 package project_1;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class heart {
@@ -26,26 +25,31 @@ public class heart {
 
         System.out.print("Out of the following health attributes above, which one would you like to analyze between individuals who have heart disease and those who do not?\n");
         String healthAttribute = keyboard.nextLine();
-        System.out.printf("%s\n", healthAttribute);
+        System.out.printf("You chose to investigate %s\n", healthAttribute);
+        keyboard.close();
         int healthySum = 0;
         int healthyCount = 0;
         int sickSum = 0;
         int sickCount = 0;
-
-        for (Patient patient : patients_healthy){
-            int info = (int)patient.getPatientInfo(healthAttribute);
-            healthySum += info;
-            healthyCount++;
-        }
-        for (Patient patient : patients_sick){
-            int info = (int)patient.getPatientInfo(healthAttribute);
-            sickSum += info;
-            sickCount++;
+        try{
+            for (Patient patient : patients_healthy){
+                int info = (int)patient.getPatientInfo(healthAttribute);
+                healthySum += info;
+                healthyCount++;
+            }
+            for (Patient patient : patients_sick){
+                int info = (int)patient.getPatientInfo(healthAttribute);
+                sickSum += info;
+                sickCount++;
+            }
+        } catch (NullPointerException e){
+            System.out.println("Null pointer exception! Make sure to input one of the health attribute options correctly!");
+            System.exit(1);
         }
         double healthyAverage = (healthySum/healthyCount);
         double sickAverage = (sickSum/sickCount);
 
-        System.out.printf("After conducting analysis the average %s for those without heart disease is: $.2f and for those with health disease is: $.2f",healthAttribute, healthyAverage, sickAverage);
+        System.out.printf("After conducting analysis the average %s for those without heart disease is: %.2f and for those with health disease is: %.2f\n",healthAttribute, healthyAverage, sickAverage);
 
     }
 

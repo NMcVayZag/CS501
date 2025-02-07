@@ -23,10 +23,27 @@ public class Patient {
         this.exang = exang;
         this.target = target;
     }
+    //define method with switch to grab patient information by feild name.
     public Object getPatientInfo(String field){
         switch (field){
             case "age":
                 return age;
+            case "sex":
+                return sex;
+            case "cp":
+                return cp;
+            case "trestbps":
+                return trestbps;
+            case "chol":
+                return chol;
+            case "fbs":
+                return fbs;
+            case "thalach":
+                return thalach;
+            case "exang":
+                return exang;
+            case "target":
+                return target;
             default:
                 return null;
         }
