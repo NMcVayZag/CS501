@@ -57,6 +57,12 @@ public class BoatTester {
         }else{
             System.out.println("unloading a pallet that doesn't exist - FAILED");
         }
+        loadedBoat.setTopSpeed(60);
+        if(loadedBoat.getTopSpeed()==60){
+            System.out.println("Successfully set boat top speed -pass");
+        }else {
+            System.out.println("failed to set boat top speed -fail");
+        }
     }
     
 }

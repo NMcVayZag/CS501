@@ -66,6 +66,9 @@ public class Boat implements Fuelable {
   }  
   public Pallet unload(Pallet p){
     int loc = cargo.indexOf(p);
+    if(loc == -1){
+      return null;
+  }
     int vol = p.getVolume();
     capacity += vol;
     return cargo.remove(loc);     
@@ -88,7 +91,7 @@ public class Boat implements Fuelable {
   public int getCapacity(){
     return capacity;
   }  
-  private void setTopSpeed(int speed){
+  public void setTopSpeed(int speed){
     topSpeed = speed;
   }
   public int getTopSpeed(){
