@@ -15,7 +15,7 @@ public class Roster{
     public Roster(){
       courseName = "NA";
       courseId = "NA000";
-      students = new Student[10];
+      students = new Student[5];
       count = 0;
     }
     public Roster(String cName, String cId, int max){

@@ -103,6 +103,6 @@ public class Student{
     }
  
     public String toString(){
-      return (first + " " + last + " " + id);
+      return (first + " " + last + " " + id + " "+ printGrades());
     }
   }
