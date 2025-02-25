@@ -31,6 +31,16 @@ public class RectangleTester {
             System.out.println("Setters FAILED");
         }
 
+        int origPosition = myCustomRectangle.getPosition();
+        System.out.println("The position of my Rectangle is "+ myCustomRectangle.getPosition());
+        myCustomRectangle.Move();
+        System.out.println("The position of my Rectangle is "+ myCustomRectangle.getPosition());
+        if (myCustomRectangle.getPosition()!= origPosition){
+            System.out.println("Move method & Position method PASSED");
+        } else{
+            System.out.println("Move OR position method FAILED");
+        }
+
 
     }
     
