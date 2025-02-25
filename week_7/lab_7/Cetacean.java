@@ -1,10 +1,10 @@
 package lab_7;
 
-public class Cetaceans {
+public class Cetacean {
     protected String[] cetaceanProperties;
     protected String designation;
 
-    public Cetaceans(){
+    public Cetacean(){
         cetaceanProperties = new String[] {"aquatic", "streamlined bodies", "paddle-like fluke(tail)"};
         designation = "family of species";
 
@@ -15,4 +15,8 @@ public class Cetaceans {
             System.out.println(property+"\n");
         }
     }
+    protected String getDesignation(){
+        return this.designation;
+    }
+    
 }

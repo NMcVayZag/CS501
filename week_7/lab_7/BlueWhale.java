@@ -26,5 +26,9 @@ public class BlueWhale extends Mysticeti {
             System.out.println("\t"+property+"\n");
         }
     }
+    protected String getDesignation(){
+        return this.designation;
+    }
+    
 }
 

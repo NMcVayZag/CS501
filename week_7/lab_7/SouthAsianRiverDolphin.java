@@ -29,5 +29,8 @@ public class SouthAsianRiverDolphin extends Odontoceti {
         }
     
     }
+    protected String getDesignation(){
+        return this.designation;
+    }
     
 }

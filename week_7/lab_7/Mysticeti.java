@@ -1,6 +1,6 @@
 package lab_7;
 
-public class Mysticeti extends Cetaceans {
+public class Mysticeti extends Cetacean {
     protected String[] mysticetiProperties;
     protected String designation;
     
@@ -23,5 +23,8 @@ public class Mysticeti extends Cetaceans {
             System.out.println("\t"+property+"\n");
         }
     
+    }
+    protected String getDesignation(){
+        return this.designation;
     }
 }

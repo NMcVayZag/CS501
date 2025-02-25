@@ -1,6 +1,6 @@
 package lab_7;
 
-public class Odontoceti extends Cetaceans {
+public class Odontoceti extends Cetacean {
     protected String[] odontocetiProperties;
     protected String designation;
     
