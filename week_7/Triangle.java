@@ -11,7 +11,7 @@ public class Triangle extends Shape{
         side3 = 5;
     }
 
-    public Triangle (double s1, double s2, double s3) throws Exception
+    public Triangle (double s1, double s2, double s3) throws InvalidShapeException
     {
         this.side1 = s1; 
         side2 = s2;
@@ -27,8 +27,11 @@ public class Triangle extends Shape{
     }
     private boolean isATriangle(double s1, double s2, double s3)
     {
-        return !(s1 + s2 < s3 || s1 + s3 < s2 || s2 + s3 < s3);
+        return !(s1 + s2 < s3 || s1 + s3 < s2 || s2 + s3 < s1);
         
+    }
+    public double Circumference(){
+        return this.side1 + this.side2 + this.side3;
     }
     
 }

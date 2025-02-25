@@ -3,6 +3,7 @@ import java.util.Random;
 abstract class Shape{
     private int position; 
     abstract double Area();
+    abstract double Circumference();
 
     public Shape()
     {

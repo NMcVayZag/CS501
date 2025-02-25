@@ -16,11 +16,12 @@ public class ShapeDriver {
             System.out.println(e.getMessage());
         }
         
-        for (Shape s : myShapes)
+        for (Shape s : myShapes){
             System.out.println("The area of the " + s.getClass() + " is " + s.Area() + ".");
-
+            System.out.println("The circumference of the "+ s.getClass()+ " is "+ s.Circumference()+"." );
+        }
         Triangle myTriangle = new Triangle(6, 8, 10);
-        System.out.println("The perimeter of myTriangle is " + myTriangle.Perimeter());
+        //System.out.println("The perimeter of myTriangle is " + myTriangle.Perimeter());
     }
     
 }
