@@ -1,10 +1,17 @@
 package lab_7;
 
 public class Mysticeti extends Cetaceans {
-    protected String[] mysticetiProperties = new String[] {
-        "known informaly as a Baleen Whale",
-        "have Keratinous, filert-feeding plates to trap prey inside their mouths", 
-        "have fused neck vertebrae and unable to turn their heads at all"};
+    protected String[] mysticetiProperties;
+    protected String designation;
+    
+    public Mysticeti(){
+        super();
+        mysticetiProperties = new String[] {
+            "known informaly as a Baleen Whale",
+            "have Keratinous, filert-feeding plates to trap prey inside their mouths", 
+            "have fused neck vertebrae and unable to turn their heads at all"};
+        designation = "family of species";
+    }
     
     protected void getProperties(){
         System.out.println("Cetacean Properties include:\n");
