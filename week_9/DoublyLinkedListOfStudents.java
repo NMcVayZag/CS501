@@ -119,8 +119,9 @@ public class DoublyLinkedListOfStudents {
     }
     //swap adjacent students
     public void swapStudents(Student student_1, Student student_2){
-        Student outsidePrev = student_1.getPrevious(); // controlling references outside of students being swapped
-        Student outsideNext = student_2.getNext(); // getting the next student 
+        // controlling references outside of students being swapped
+        Student outsidePrev = student_1.getPrevious(); // getting the previous student outside the swap
+        Student outsideNext = student_2.getNext(); // getting the next student outside the swap
 
         if (outsidePrev != null){
             outsidePrev.setNext(student_2);// go to person in front and change ref to student two
