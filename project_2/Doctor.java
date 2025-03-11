@@ -84,7 +84,7 @@ public class Doctor extends CareProfessional {
         double healthyAverage = (healthySum/(double)healthyCount);
         double sickAverage = (sickSum/(double)sickCount);
 
-        System.out.printf("After conducting analysis the average %s for those without heart disease is: %.2f and for those with heart disease is: %.2f\n",healthAttribute, healthyAverage, sickAverage);
+        System.out.printf("After conducting analysis the average %s for those without heart disease is: %.2f and for those with heart disease is: %.2f\n\n",healthAttribute, healthyAverage, sickAverage);
         return 0;
     }
 
