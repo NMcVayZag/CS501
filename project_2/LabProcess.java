@@ -1,7 +1,7 @@
-package project_1;
+package project_2;
 import java.util.*;
 
-public class heart {
+public class LabProcess {
     public static void main(String[] args){
         ArrayList<ArrayList<Patient>> patients = getPatients();
         ArrayList<Patient> patients_healthy = patients.get(0);

@@ -59,27 +59,27 @@ public class DoublyLinkedListOfStudents {
             tail = newStudent;
         }
     }
-    public void removeStudent(String firstName, String lastName){
-        Student currentStudent = head; // start at front of list searching for student to remove
-        while (currentStudent != null){
-            String currentFirstName = currentStudent.getFirstName();
-            String currentLastName = currentStudent.getLastName();
-            if ((currentFirstName == firstName) && (currentLastName == lastName)){
-                if (currentStudent.getNext() == null){// if nobody after we have to alter tail
-                    tail = currentStudent.getPrevious();
-                }else{
-                    currentStudent.getNext().setPrev(currentStudent.getPrevious()); //go to next student and set their previous the previous of current since we are removing current
-                }
-                if (currentStudent.getPrevious() == null){
-                    head = currentStudent.getNext(); // if there is nobody infront of student to remove we set the next student to the head
-                } else{
-                    currentStudent.getPrevious().setNext(currentStudent.getNext()); // if there is sombody infront we set their next to the current student's next ref
-                }
-                return; // end loop over linked list if the removal student is found
-            }
-            currentStudent = currentStudent.getNext(); // iterate to next student
-        }
-    }
+    // public void removeStudent(String firstName, String lastName){
+    //     Student currentStudent = head; // start at front of list searching for student to remove
+    //     while (currentStudent != null){
+    //         String currentFirstName = currentStudent.getFirstName();
+    //         String currentLastName = currentStudent.getLastName();
+    //         if ((currentFirstName == firstName) && (currentLastName == lastName)){
+    //             if (currentStudent.getNext() == null){// if nobody after we have to alter tail
+    //                 tail = currentStudent.getPrevious();
+    //             }else{
+    //                 currentStudent.getNext().setPrev(currentStudent.getPrevious()); //go to next student and set their previous the previous of current since we are removing current
+    //             }
+    //             if (currentStudent.getPrevious() == null){
+    //                 head = currentStudent.getNext(); // if there is nobody infront of student to remove we set the next student to the head
+    //             } else{
+    //                 currentStudent.getPrevious().setNext(currentStudent.getNext()); // if there is sombody infront we set their next to the current student's next ref
+    //             }
+    //             return; // end loop over linked list if the removal student is found
+    //         }
+    //         currentStudent = currentStudent.getNext(); // iterate to next student
+    //     }
+    // }
 
     public void rollCall(){
         Student current = head;

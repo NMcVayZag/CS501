@@ -1,4 +1,4 @@
-package project_1;
+package project_2;
 
 public class Patient {
     private int age;
