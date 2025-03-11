@@ -1,9 +1,18 @@
 package project_2;
-
+import java.util.*;
 
 public class Dataset {
     String dataset;
+    ArrayList<Patient> generalPatientRecords;
+    ArrayList<Patient> sensitivePatientRecords;
+
     public Dataset(){
+        System.out.println("Database Initializing...");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         this.dataset = "66,1,0,160,228,0,0,138,0,2.3,2,0,1,1\n"+
         "71,0,0,112,149,0,1,125,0,1.6,1,0,2,1\n"+
         "64,1,3,170,227,0,0,155,0,0.6,1,0,3,1\n"+
@@ -37,6 +46,19 @@ public class Dataset {
     }
     public String getData(){
         return this.dataset;
+    }
+    public void setSensitivePatientRecords(ArrayList<Patient> patients){
+        this.sensitivePatientRecords = patients;
+    }
+    public ArrayList<Patient> getSensitivePatientRecords(){
+        return this.sensitivePatientRecords;
+    }
+
+    public void setGeneralPatientRecords(ArrayList<Patient> patients){
+        this.generalPatientRecords = patients;
+    }
+    public ArrayList<Patient> getGeneralPatientRecords(){
+        return this.generalPatientRecords;
     }
 
 

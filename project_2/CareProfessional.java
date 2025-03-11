@@ -42,36 +42,14 @@ public class CareProfessional{
     }
  
 
-    public ArrayList<Patient> getRecords(){
-        Dataset myDataset = new Dataset();
-        String dataset = myDataset.getData();
-        ArrayList<Patient> patients = new ArrayList<Patient>();
-            
-        // ArrayList<Patient> patients_healthy = new ArrayList<Patient>();
-        // ArrayList<Patient> patients_sick = new ArrayList<Patient>();
-        String[] rows = dataset.split("\n");
-        for(String row : rows){
-            String[] columns = row.split(",");
-            int age = Integer.parseInt(columns[0]);
-            int sex = Integer.parseInt(columns[1]);
-            int cp = 0;
-            int trestbps = 0;
-            int chol = 0;
-            int fbs = 0;
-            int thalach = 0;
-            int exang = 0;
-            int target = Integer.parseInt(columns[13]);
-            Patient patient = new Patient(age, sex, cp, trestbps, chol, fbs, thalach, exang, target);
-            patients.add(patient);
-            // if (target == 0){
-            //     patients_healthy.add(patient);
-            // }else{
-            //     patients_sick.add(patient);
-            // }
+    public ArrayList<Patient> getRecords(Dataset myDataset){
+        ArrayList<Patient> patients = myDataset.getGeneralPatientRecords();
+        System.out.println(name + " pulling general patient info from database...");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        // ArrayList<ArrayList<Patient>> patients = new ArrayList<ArrayList<Patient>>();
-        // patients.add(patients_healthy);
-        // patients.add(patients_sick);
         return patients;
     
     }
