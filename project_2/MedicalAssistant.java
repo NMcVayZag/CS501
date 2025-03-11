@@ -37,7 +37,7 @@ public class MedicalAssistant extends CareProfessional{
 
             System.out.println("MA "+ name + " collecting basic info of patients...");
             try {
-                Thread.sleep(4000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -47,7 +47,7 @@ public class MedicalAssistant extends CareProfessional{
     public void assignPatients(Dataset myDataset){
         ArrayList<Patient> patients = getRecords(myDataset); // geting general patient info from database
         assignedDoctor.setPatients(patients); // assigning doctor patients with general patient info
-        System.out.println("MA "+ name + " assigning patients to doctor " + assignedDoctor +"...");
+        System.out.println("MA "+ name + " assigning patients to doctor " + assignedDoctor.getName() +"...");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

@@ -14,7 +14,9 @@ public class LabProcess {
             while(true){ 
                 System.out.println("Please enter \"start\" to begin the process.");
                 String commandString = keyboard.nextLine();
-                if (commandString != "start"){
+                if (commandString.equals("exit")){
+                    System.exit(0);
+                }else if(!commandString.equals("start")){
                     System.out.println("Please enter a valid command");
                     continue;
                 }else{
@@ -22,14 +24,15 @@ public class LabProcess {
                     break;
                 }
             }
-            LabScientist derrick = new LabScientist(421, "derrick", 32, 70000, "Biolab");
-            Doctor davis = new Doctor(211, "davis", 55, 430000, "clinic", derrick);
-            MedicalAssistant hannah = new MedicalAssistant(162,"hannah", 23, 62000, "clinic", davis);
+            LabScientist derrick = new LabScientist(421, "Derrick", 32, 70000, "Biolab");
+            Doctor davis = new Doctor(211, "Davis", 55, 430000, "clinic", derrick);
+            MedicalAssistant hannah = new MedicalAssistant(162,"Hannah", 23, 62000, "clinic", davis);
             Dataset myDataset = new Dataset();
 
             // collect patient basic info & assign patients to doctor davis
             hannah.uploadGeneralPatientInfo(myDataset);
             hannah.assignPatients(myDataset);
+            // doctor davis orders labwork to be done by derrick so that he can conduct an analysis
             davis.orderLabWorkOnPatients(myDataset);
 
             System.out.println("Health attributes available for analysis include:");
@@ -46,18 +49,22 @@ public class LabProcess {
             System.out.println("8. exang - Exercise induced angina");
             System.out.println("\t* 1= yes, 0= no\n");
 
-            System.out.print("Out of the following health attributes above, which one would you like to be analyzed by a doctor providing insights between individuals who have heart disease and those who do not?\n");
-            userCommand = keyboard.nextLine();
-            if (userCommand == "exit"){
-                break;
+            while(userCommand != "exit"){
+                System.out.print("Out of the following health attributes above, which one would you like to be analyzed by a doctor providing insights between individuals who have heart disease and those who do not?\n");
+                userCommand = keyboard.nextLine();
+                if (userCommand.equals("exit")){
+                    System.exit(0);
+                }
+                System.out.printf("You chose to investigate %s\n", userCommand);
+                
+                int status = davis.reportHeartAnalysis(userCommand);
+                if (status != 0){
+                    System.out.println("Please retry with valid attribute or input \"exit\" to exit the program.\n\n");
+                    continue;
+                }
             }
-            System.out.printf("You chose to investigate %s\n", userCommand);
-            davis.reportHeartAnalysis(userCommand);
             keyboard.close();
-            
-
-     
-      
+        
         }
     }
 }

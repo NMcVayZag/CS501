@@ -13,9 +13,9 @@ public class LabScientist extends CareProfessional {
         }
     }
     public void uploadSensitivePatientInfo(Dataset myDataset){
-        System.out.println("Lab Scientist"+ name + " running labwork and medical tests...");
+        System.out.println("Lab Scientist "+ name + " running labwork and medical tests...");
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

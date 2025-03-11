@@ -1,4 +1,5 @@
 package project_2;
+
 import java.util.*;
 public class Doctor extends CareProfessional {
     ArrayList<Patient> doctorsPatients;
@@ -30,7 +31,7 @@ public class Doctor extends CareProfessional {
         }
 
     public void orderLabWorkOnPatients(Dataset myDataset){
-        System.out.println("Doctor"+ name + " requesting lab work for patients");
+        System.out.println("Doctor "+ name + " requesting lab work for patients");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -42,13 +43,7 @@ public class Doctor extends CareProfessional {
 
     }
 
-    public void reportHeartAnalysis(String healthAttribute){
-        System.out.println("Doctor"+ name + " conducting patient analysis on "+ healthAttribute + "...");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public int reportHeartAnalysis(String healthAttribute){
         // perform report
         String field = "target";
         ArrayList<Patient> patients_healthy = new ArrayList<Patient>();
@@ -61,7 +56,6 @@ public class Doctor extends CareProfessional {
                 patients_sick.add(patient);
             }
         }
-
         int healthySum = 0;
         int healthyCount = 0;
         int sickSum = 0;
@@ -79,13 +73,19 @@ public class Doctor extends CareProfessional {
             }
         } catch (NullPointerException e){
             System.out.println("Null pointer exception! Make sure to input one of the health attribute options correctly!");
-            System.exit(1);
+            return 1;
         }
-        double healthyAverage = (healthySum/healthyCount);
-        double sickAverage = (sickSum/sickCount);
+        System.out.println("Doctor"+ name + " conducting patient analysis on "+ healthAttribute + "...");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        double healthyAverage = (healthySum/(double)healthyCount);
+        double sickAverage = (sickSum/(double)sickCount);
 
-        System.out.printf("After conducting analysis the average %s for those without heart disease is: %.2f and for those with health disease is: %.2f\n",healthAttribute, healthyAverage, sickAverage);
-
+        System.out.printf("After conducting analysis the average %s for those without heart disease is: %.2f and for those with heart disease is: %.2f\n",healthAttribute, healthyAverage, sickAverage);
+        return 0;
     }
 
 

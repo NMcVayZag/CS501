@@ -23,7 +23,7 @@ public class Patient {
         this.exang = 0;
         this.target = target;
     }
-    public Patient(int age, int sex, int target, int cp, int trestbps, int chol, int fbs, int thalach, int exang){
+    public Patient(int age, int sex, int cp, int trestbps, int chol, int fbs, int thalach, int exang, int target){
         this.age = age;
         this.sex = sex;
         this.cp = cp;
