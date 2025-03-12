@@ -19,6 +19,9 @@ public class Doctor extends CareProfessional {
     public void setPatients(ArrayList<Patient> patients){
         this.doctorsPatients = patients;
     }
+    public ArrayList<Patient> getDoctorsPatients(){
+        return this.doctorsPatients;
+    }
 
     public ArrayList<Patient> getRecords(Dataset myDataset){
         System.out.println( name + " pulling sensitive patient info from database...");

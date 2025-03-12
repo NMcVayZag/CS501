@@ -54,6 +54,12 @@ public class MedicalAssistant extends CareProfessional{
             e.printStackTrace();
         }
     }
+    public Doctor getDoctor(){
+        return this.assignedDoctor;
+    }
+    public void setDoctor(Doctor doctor){
+        this.assignedDoctor = doctor;
+    }
 
 }
 
