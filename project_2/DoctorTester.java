@@ -41,6 +41,17 @@ public class DoctorTester {
             break;
         }
 
+        // test reportHeartAnalysis
+        // bad user request
+        int statusBadReq = davis.reportHeartAnalysis("apples");
+        int statusGoodReq = davis.reportHeartAnalysis("chol");
+
+        if ((statusBadReq==1)&&(statusGoodReq==0)){
+            System.out.println("Doctor reportHeartAnalysis method PASSED");
+            System.out.println("Doctor reportHeartAnalysis method FAILED");
+        }
+        
+
 
 
         
