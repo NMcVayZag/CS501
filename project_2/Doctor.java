@@ -32,6 +32,10 @@ public class Doctor extends CareProfessional {
         }
         return myDataset.getSensitivePatientRecords();
         }
+        
+    public LabScientist getLabScientist(){
+        return this.labtech;
+    }
 
     public void orderLabWorkOnPatients(Dataset myDataset){
         System.out.println("Doctor "+ name + " requesting lab work for patients");
