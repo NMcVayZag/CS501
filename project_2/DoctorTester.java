@@ -30,6 +30,7 @@ public class DoctorTester {
         }
 
         // test orderLabWorkOnPatients & getRecords
+        //context is that gerneral records will have 0s for sensitive patient features
         davis.orderLabWorkOnPatients(myDataset);
         ArrayList<Patient> analyzedPatients = davis.getRecords(myDataset);
         for (Patient pat: analyzedPatients){
@@ -48,7 +49,6 @@ public class DoctorTester {
 
         if ((statusBadReq==1)&&(statusGoodReq==0)){
             System.out.println("Doctor reportHeartAnalysis method PASSED");
-            System.out.println("Doctor reportHeartAnalysis method FAILED");
         }
         
 

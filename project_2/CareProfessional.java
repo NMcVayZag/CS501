@@ -2,11 +2,11 @@ package project_2;
 import java.util.*;
 
 public class CareProfessional{
-    int id;
-    String name;
-    int age;
-    int salary;
-    String department;
+    protected int id;
+    protected String name;
+    protected int age;
+    protected int salary;
+    protected String department;
 
     public CareProfessional(int id, String name, int age, int salary, String department){
         this.id = id;

@@ -2,9 +2,9 @@ package project_2;
 import java.util.*;
 
 public class Dataset {
-    String dataset;
-    ArrayList<Patient> generalPatientRecords;
-    ArrayList<Patient> sensitivePatientRecords;
+    private String dataset;
+    private ArrayList<Patient> generalPatientRecords;
+    private ArrayList<Patient> sensitivePatientRecords;
 
     public Dataset(){
         System.out.println("Database Initializing...");

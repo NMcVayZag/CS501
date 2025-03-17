@@ -2,8 +2,8 @@ package project_2;
 
 import java.util.*;
 public class Doctor extends CareProfessional {
-    ArrayList<Patient> doctorsPatients;
-    LabScientist labtech;
+    private ArrayList<Patient> doctorsPatients;
+    private LabScientist labtech;
 
     public Doctor(int id, String name, int age, int salary, String department, LabScientist labguy){
         super(id, name, age, salary, department);

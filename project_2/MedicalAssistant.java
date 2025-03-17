@@ -2,7 +2,7 @@ package project_2;
 import java.util.*;
 
 public class MedicalAssistant extends CareProfessional{
-    Doctor assignedDoctor;
+    private Doctor assignedDoctor;
 
     public MedicalAssistant(int id, String name, int age, int salary, String department, Doctor assignedDoctor){
         super(id, name, age, salary, department);

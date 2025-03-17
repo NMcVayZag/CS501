@@ -9,12 +9,13 @@ public class LabProcess {
         
             Scanner keyboard = new Scanner(System.in);
 
-            System.out.println("Hi user! this program will allow you to investigate the differnces in health attributes between individuals who have heart disease and those who do not\n");
+            System.out.println("\nHi user! this program will allow you to investigate the differnces in health attributes between individuals who have heart disease and those who do not\n");
             System.out.println("First however we must run an analysis process in the hospital to get the right patient data for the report");
             while(true){ 
                 System.out.println("Please enter \"start\" to begin the process.");
                 String commandString = keyboard.nextLine();
                 if (commandString.equals("exit")){
+                    keyboard.close();
                     System.exit(0);
                 }else if(!commandString.equals("start")){
                     System.out.println("Please enter a valid command");
@@ -25,8 +26,8 @@ public class LabProcess {
                 }
             }
             LabScientist derrick = new LabScientist(421, "Derrick", 32, 70000, "Biolab");
-            Doctor davis = new Doctor(211, "Davis", 55, 430000, "clinic", derrick);
-            MedicalAssistant hannah = new MedicalAssistant(162,"Hannah", 23, 62000, "clinic", davis);
+            Doctor davis = new Doctor(211, "Davis", 55, 430000, "Clinic", derrick);
+            MedicalAssistant hannah = new MedicalAssistant(162,"Hannah", 23, 62000, "Clinic", davis);
             Dataset myDataset = new Dataset();
 
             // collect patient basic info & assign patients to doctor davis
